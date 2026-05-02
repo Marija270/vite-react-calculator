@@ -7,7 +7,6 @@ function App() {
   const [firstValue, setFirstValue] = useState('')
   const [secondValue, setSecondValue] = useState('')
   const [result, setResult] = useState<number | null>(null)
-  const [message, setMessage] = useState('Unesi dva broja i izaberi operaciju.')
 
   const parseInputs = () => {
     const firstNumber = Number(firstValue)
@@ -15,13 +14,11 @@ function App() {
 
     if (firstValue.trim() === '' || secondValue.trim() === '') {
       setResult(null)
-      setMessage('Oba polja su obavezna.')
       return null
     }
 
     if (Number.isNaN(firstNumber) || Number.isNaN(secondNumber)) {
       setResult(null)
-      setMessage('Unesi ispravne numericke vrednosti.')
       return null
     }
 
@@ -40,25 +37,20 @@ function App() {
     switch (operation) {
       case 'Saberi':
         setResult(firstNumber + secondNumber)
-        setMessage('Rezultat sabiranja je prikazan ispod.')
         break
       case 'Oduzmi':
         setResult(firstNumber - secondNumber)
-        setMessage('Rezultat oduzimanja je prikazan ispod.')
         break
       case 'Pomnozi':
         setResult(firstNumber * secondNumber)
-        setMessage('Rezultat mnozenja je prikazan ispod.')
         break
       case 'Podeli':
         if (secondNumber === 0) {
           setResult(null)
-          setMessage('Deljenje nulom nije dozvoljeno.')
           return
         }
 
         setResult(firstNumber / secondNumber)
-        setMessage('Rezultat deljenja je prikazan ispod.')
         break
       default:
         break
@@ -69,7 +61,6 @@ function App() {
     setFirstValue('')
     setSecondValue('')
     setResult(null)
-    setMessage('Unesi dva broja i izaberi operaciju.')
   }
 
   return (
@@ -84,7 +75,7 @@ function App() {
               type="number"
               inputMode="decimal"
               step="any"
-              placeholder="npr. 15"
+              placeholder="Unesi prvi broj"
               value={firstValue}
               onChange={(event) => setFirstValue(event.target.value)}
             />
@@ -96,7 +87,7 @@ function App() {
               type="number"
               inputMode="decimal"
               step="any"
-              placeholder="npr. 5"
+              placeholder="Unesi drugi broj"
               value={secondValue}
               onChange={(event) => setSecondValue(event.target.value)}
             />
@@ -117,14 +108,12 @@ function App() {
             /
           </button>
           <button type="button" className="secondary" onClick={resetCalculator}>
-            Reset
+            Obrisi
           </button>
         </div>
 
         <div className="result-panel">
-          <p className="status">{message}</p>
-          <p className="result-label">Rezultat</p>
-          <output className="result-value">{result ?? '-'}</output>
+          <output className="result-value">{result ?? ''}</output>
         </div>
       </section>
     </main>

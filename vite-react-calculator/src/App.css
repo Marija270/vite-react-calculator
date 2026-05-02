@@ -2,24 +2,24 @@
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 10px 16px;
-  background: #111111;
+  padding: 8px 14px;
+  background: radial-gradient(circle at top, #1f1f1f 0%, #111111 60%);
 }
 
 .calculator-card {
   width: min(100%, 320px);
-  padding: 14px;
-  border-radius: 16px;
-  background: #1a1a1a;
-  border: 2px solid #facc15;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #1d1d1d 0%, #151515 100%);
+  border: 1px solid #ffd84d;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
 }
 
 .input-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 8px;
-  margin-bottom: 10px;
+  gap: 7px;
+  margin-bottom: 8px;
 }
 
 .field {
@@ -36,10 +36,10 @@
 
 .field input {
   width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #3a3a3a;
+  padding: 7px 10px;
+  border: 1px solid #424242;
   border-radius: 8px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   background: #0d0d0d;
   color: #ffffff;
   appearance: textfield;
@@ -61,67 +61,58 @@
 .actions {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 7px;
-  margin-bottom: 10px;
+  gap: 6px;
+  margin-bottom: 8px;
 }
 
 .actions button {
   border: none;
   border-radius: 8px;
-  padding: 8px 8px;
-  font-size: 0.95rem;
+  padding: 7px 8px;
+  font-size: 0.92rem;
   font-weight: 700;
   cursor: pointer;
   color: #111111;
-  background: #facc15;
-  transition: background 0.18s ease;
+  background: linear-gradient(180deg, #ffd84d 0%, #facc15 100%);
+  transition:
+    background 0.18s ease,
+    transform 0.12s ease;
 }
 
 .actions button:hover {
-  background: #fde047;
+  background: linear-gradient(180deg, #ffe27a 0%, #fcd34d 100%);
+  transform: translateY(-1px);
 }
 
 .actions .secondary {
   grid-column: span 4;
-  color: #facc15;
-  background: #2a2a2a;
+  color: #f5d14a;
+  background: #262626;
   border: 1px solid #facc15;
 }
 
 .result-panel {
-  padding: 10px;
+  padding: 8px 10px;
   border-radius: 10px;
   background: #0d0d0d;
-  border: 1px solid #3a3a3a;
-  text-align: left;
-}
-
-.status {
-  min-height: 16px;
-  margin: 0 0 6px;
-  font-size: 0.72rem;
-  color: #d4d4d4;
-}
-
-.result-label {
-  margin: 0 0 2px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.68rem;
-  color: #facc15;
+  border: 1px solid #404040;
+  text-align: center;
 }
 
 .result-value {
   display: block;
-  min-height: 30px;
-  font-size: clamp(1.35rem, 6vw, 1.9rem);
+  min-height: 24px;
+  font-size: clamp(1.2rem, 5.4vw, 1.7rem);
   font-weight: 700;
   color: #ffffff;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.15;
 }
 
 @media (max-width: 640px) {
   .calculator-card {
     width: min(100%, 300px);
-    padding: 12px;
+    padding: 10px;
   }
 }
