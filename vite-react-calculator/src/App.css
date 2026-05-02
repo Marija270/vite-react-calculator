@@ -1,0 +1,127 @@
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 10px 16px;
+  background: #111111;
+}
+
+.calculator-card {
+  width: min(100%, 320px);
+  padding: 14px;
+  border-radius: 16px;
+  background: #1a1a1a;
+  border: 2px solid #facc15;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+  text-align: left;
+}
+
+.field span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #facc15;
+}
+
+.field input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: #0d0d0d;
+  color: #ffffff;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.field input:focus {
+  outline: 2px solid #facc15;
+  outline-offset: 2px;
+  border-color: #facc15;
+}
+
+.field input::-webkit-outer-spin-button,
+.field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+.actions button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #111111;
+  background: #facc15;
+  transition: background 0.18s ease;
+}
+
+.actions button:hover {
+  background: #fde047;
+}
+
+.actions .secondary {
+  grid-column: span 4;
+  color: #facc15;
+  background: #2a2a2a;
+  border: 1px solid #facc15;
+}
+
+.result-panel {
+  padding: 10px;
+  border-radius: 10px;
+  background: #0d0d0d;
+  border: 1px solid #3a3a3a;
+  text-align: left;
+}
+
+.status {
+  min-height: 16px;
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  color: #d4d4d4;
+}
+
+.result-label {
+  margin: 0 0 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+  color: #facc15;
+}
+
+.result-value {
+  display: block;
+  min-height: 30px;
+  font-size: clamp(1.35rem, 6vw, 1.9rem);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .calculator-card {
+    width: min(100%, 300px);
+    padding: 12px;
+  }
+}
