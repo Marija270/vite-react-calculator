@@ -4,7 +4,7 @@ Kalkulator uradjen u React, Vite i TypeScript. Aplikacija sluzi za sabiranje, od
 
 ## Live verzija
 
-https://vite-react-calculator-henna.vercel.app/
+https://vite-react-calculator-roan-six.vercel.app/
 
 ## Pokretanje lokalno
 
