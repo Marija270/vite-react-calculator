@@ -1,6 +1,6 @@
 # vite-react-calculator
 
-Ovo je moj mini kalkulator uradjen u React, Vite i TypeScript tehnologijama. Aplikacija sluzi za sabiranje, oduzimanje, mnozenje i deljenje dva broja.
+Kalkulator uradjen u React, Vite i TypeScript. Aplikacija sluzi za sabiranje, oduzimanje, mnozenje i deljenje dva broja.
 
 ## Live verzija
 
