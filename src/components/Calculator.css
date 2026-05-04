@@ -1,0 +1,110 @@
+.calculator-card {
+  width: min(100%, 320px);
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #1d1d1d 0%, #151515 100%);
+  border: 1px solid #ffd84d;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+  text-align: left;
+}
+
+.field span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #facc15;
+}
+
+.field input {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid #424242;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  background: #0d0d0d;
+  color: #ffffff;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.field input:focus {
+  outline: 2px solid #facc15;
+  outline-offset: 2px;
+  border-color: #facc15;
+}
+
+.field input::-webkit-outer-spin-button,
+.field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.actions button {
+  border: none;
+  border-radius: 8px;
+  padding: 7px 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #111111;
+  background: linear-gradient(180deg, #ffd84d 0%, #facc15 100%);
+  transition:
+    background 0.18s ease,
+    transform 0.12s ease;
+}
+
+.actions button:hover {
+  background: linear-gradient(180deg, #ffe27a 0%, #fcd34d 100%);
+  transform: translateY(-1px);
+}
+
+.actions .secondary {
+  grid-column: span 4;
+  color: #f5d14a;
+  background: #262626;
+  border: 1px solid #facc15;
+}
+
+.result-panel {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #0d0d0d;
+  border: 1px solid #404040;
+  text-align: center;
+}
+
+.result-value {
+  display: block;
+  min-height: 24px;
+  font-size: clamp(1.2rem, 5.4vw, 1.7rem);
+  font-weight: 700;
+  color: #ffffff;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.15;
+}
+
+@media (max-width: 640px) {
+  .calculator-card {
+    width: min(100%, 300px);
+    padding: 10px;
+  }
+}
